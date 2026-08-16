@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0E1B4D; /* Navy */
+  --color-secondary: #FFB74A; /* Amber */
+  --color-ink: #1A1A1A;
+  --color-soft-grey: #F0F0F0;
+  
+  --font-sans: "Barlow", sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* Prevent the off-canvas mobile sidebar (translated off-screen right)
+   from adding horizontal scroll. Clip at the root scroller so the
+   sticky navbar keeps working. */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Barlow", sans-serif;
+}
+
+/* Hide scrollbar while keeping horizontal scroll (used by drawer tab nav). */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.primary {
+  color: #1FCE93 !important;
+}
+
+.secondary {
+  color: #3CAE97 !important;
+}
+
+.light_primary {
+  color: #134843 !important;
+}
+
+
+.custom-textarea:hover,
+.custom-textarea:focus,
+.custom-textarea:focus-within {
+  border-color: #8a2ce2 !important;
+  box-shadow: 0 0 0 2px rgba(212, 175, 56, 0.2);
+}
+
+.ant-tag {
+  @apply !flex !items-center !gap-2 !w-max;
+}
+
+.custom-container {
+  @apply container mx-auto px-3 md:px-4 lg:px-10;
+}
+
+.common-flex {
+  @apply flex items-center justify-center w-full
+}
+
+.menu-link {
+  @apply flex items-start justify-start gap-1 text-[14px] font-medium px-3 py-2 w-full rounded-md
+}
+
+
+.seaweed-script {
+  font-family: "Seaweed Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Users table: left "Showing X to Y" text, right Prev/pages/Next */
+.users-table-wrap .ant-table-pagination {
+  display: flex !important;
+  width: 100%;
+  justify-content: space-between !important;
+  align-items: center;
+  margin: 0 !important;
+  padding: 12px 16px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.users-table-wrap .ant-pagination-total-text {
+  flex: 1;
+  margin-inline-end: 0 !important;
+  color: #6b7280;
+  font-size: 14px;
+}
